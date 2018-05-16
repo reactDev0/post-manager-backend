@@ -1,0 +1,32 @@
+{
+    "name": "Media",
+    "base": "PersistedModel",
+    "idInjection": false,
+    "options": {
+      "validateUpsert": true
+    },
+    "properties": {
+      "thumbnail": {
+        "type": "string",
+        "required": true,
+        "default": "Untitled"
+      },
+      "cover": {
+        "type": "string"
+      }
+    },
+    "validations": [],
+    "relations": {
+      "Posts": {
+        "type": "hasMany",
+        "model": "Post",
+        "foreignKey": "mediaId",
+        "options": {
+          "nestRemoting": true
+        }
+      }
+    },
+    "acls": [],
+    "methods": {}
+  }
+  

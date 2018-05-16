@@ -1,0 +1,55 @@
+{
+    "name": "Post",
+    "base": "PersistedModel",
+    "idInjection": false,
+    "options": {
+      "validateUpsert": true
+    },
+    "properties": {
+      "title": {
+        "type": "string",
+        "required": true,
+        "default": "Untitled"
+      },
+      "description": {
+        "type": "string"
+      },
+      "createdAt": {
+        "type": "number",
+        "required": true,
+        "default": 0
+      },
+      "upvotes": {
+        "type": "number",
+        "required": true,
+        "default": 0
+      },
+      "downvotes": {
+        "type": "number",
+        "required": true,
+        "default": 0
+      }
+    },
+    "validations": [],
+    "relations": {
+      "Media": {
+        "type": "belongsTo",
+        "model": "Media",
+        "foreignKey": "mediaId",
+        "options": {
+          "nestRemoting": true
+        }
+      },
+      "CustomUser": {
+        "type": "belongsTo",
+        "model": "CustomUser",
+        "foreignKey": "customUserId",
+        "options": {
+          "nestRemoting": true
+        }
+      }
+    },
+    "acls": [],
+    "methods": {}
+  }
+  
